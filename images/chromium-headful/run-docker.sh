@@ -86,4 +86,9 @@ if [[ "${ENABLE_WEBRTC:-}" == "true" ]]; then
 fi
 
 docker rm -f "$NAME" 2>/dev/null || true
-docker run -it "${RUN_ARGS[@]}" "$IMAGE"
+
+if [[ "${1:-}" == "-it" ]]; then
+  docker run -it "${RUN_ARGS[@]}" "$IMAGE"
+else
+  docker run -d --rm "${RUN_ARGS[@]}" "$IMAGE"
+fi

@@ -8,6 +8,11 @@ on:
     branches: ["optexity"]
   workflow_dispatch:
 
+# Required so called workflows (chromium-*-image) can push to GHCR
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-headful:
     uses: ./.github/workflows/chromium-headful-image.yaml

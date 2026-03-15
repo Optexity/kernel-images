@@ -1,10 +1,11 @@
 name: Test chromium-launcher
 
+# Runs on any push/PR targeting the default branch (optexity)
 on:
   push:
-    branches: ["main"]
+    branches: ["optexity"]
   pull_request:
-    branches: ["main"]
+    branches: ["optexity"]
   workflow_dispatch:
 
 jobs:

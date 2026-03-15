@@ -22,6 +22,7 @@ jobs:
     needs: [build-headful, build-headless]
     permissions:
       contents: read
+      packages: write
 
     steps:
       - name: Checkout code
